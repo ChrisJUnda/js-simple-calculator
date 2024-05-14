@@ -11,6 +11,8 @@ const operators = document.querySelector('.operators')
 
 const uguale = document.getElementById('uguale')
 
+const canc = document.getElementById('annulla')
+
 let myResult = 0
 let myOperator;
 let firstNumber;
@@ -31,13 +33,19 @@ uguale.addEventListener('click', function(event){
 
     myResult = result.innerText = calcoli(Number(firstNumber), Number(secondNumber), myOperator)
 
+})
 
+canc.addEventListener('click', function(event){
+    event.stopPropagation();
+    myResult = result.innerText = 0
 
-    
-    
+    firstNumber = 0
+    secondNumber = 0
+    myOperator = undefined
 
-    
-
+    console.log(myOperator)
+    console.log(firstNumber)
+    console.log(secondNumber)
 })
 
 
