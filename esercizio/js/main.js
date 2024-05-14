@@ -7,23 +7,34 @@ const result = document.getElementById('result')
 
 const numbers = document.querySelector('.numbers')
 
-console.log(result.innerText)
+const operators = document.querySelector('.operators')
 
-numbers.addEventListener('click', function(event){
-    console.log(event)
+let myOperator;
+let firstNumber;
+let secondNumber
+
+
+
+numbers.addEventListener('click', tastiNumeri )
+
+operators.addEventListener('click', tastiOperatori )
+
+
+/********
+ Funzioni
+ */
+
+ function tastiNumeri(event) {
+
 
     const currentElement = event.target
 
-    console.log(currentElement)
-    console.log(currentElement.innerText)
 
-    if(isNaN(parseInt(currentElement.innerText))) return
+
+    if(isNaN(parseInt(currentElement.innerText))) return;
 
    // if(currentElement.innerText === '=') return
 
-    console.log('adesso sono un numero')
-
-    console.log('ho cliccato su un tasto')
 
     
 
@@ -36,4 +47,27 @@ numbers.addEventListener('click', function(event){
     }
 }
 
-)
+
+function tastiOperatori(event){
+
+    /*
+    console.log(event.target)
+
+    console.log('ho cliccato su un operatore')
+
+    console.log(event.target.dataset.operator)
+    */
+
+    const currentElement = event.target
+
+    myOperator = currentElement.dataset.operator
+
+    firstNumber = result.innerText
+
+    result.innerText = 0
+
+
+
+
+}
+
